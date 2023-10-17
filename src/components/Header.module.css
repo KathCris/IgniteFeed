@@ -1,4 +1,15 @@
-.backHeader{
-    background: #3e3e42;
+.backgroundHeader{
+    background: #202024;
     width: 100%;
+    padding: 1.25rem 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.backgroundHeader img {
+    width: 3rem;
+    padding-right: 0.5rem;
+}
+
