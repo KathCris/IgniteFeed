@@ -1,4 +1,52 @@
 
 .globalCardProfile{
   background: #202024;
+
+  width: 20rem;
+  margin: 4rem;
+
+  border-radius: 8px;
+  
+}
+
+.imgBackgroundCardProfile img {
+  width: -webkit-fill-available;
+
+  border-radius: 8px 8px 0px 0px;
+}
+
+.textCardProfile{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1.4rem 0px;
+}
+
+.buttonCardProfile{
+  display: flex;
+  justify-content: center;
+}
+
+.buttonCardProfile button{
+  border-color: #00B37E;
+  color: #00B37E;
+  background-color: transparent;
+  border-radius: 8px;
+
+  padding: 6px;
+  gap: 4px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0px 0px 1.2rem 0px;
+}
+
+.buttonCardProfile button:hover{
+  background-color: #00B37E;
+  color: #202024;
+  cursor: pointer;
 }
