@@ -2,6 +2,7 @@
 .globalCardProfile{
   background: #202024;
 
+  max-height: 280px;
   width: 20rem;
   margin: 4rem;
 
