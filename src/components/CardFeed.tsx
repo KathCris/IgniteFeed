@@ -1,14 +1,29 @@
+import ImgProfile from './ImgProfile.tsx'
 import './CardFeed.css'
-  
-export default function CardFeed () {
+
+interface Author {
+  name: string,
+  role: string,
+  avatarUrl: string,
+}
+interface Content {
+  contentText: string,
+}
+
+interface PropsPost {
+  author: Author,
+  contentText: Content,
+}
+
+export default function CardFeed ({author, contentText}: PropsPost) {
   return (
     <div className="containerGlobalCardFeed">
       <div className="containerHearderTextFeed">
         <div className="containerTextFeed">
-          <img src="" alt="" />
+          <ImgProfile avatarUrl={author.avatarUrl} />
             <div className="textFeed">
-              <h4>Janine Cooper</h4>
-              <p>Dev Front-end</p>
+              <h4>{author.name}</h4>
+              <p>{author.role}</p>
             </div>
         </div>
         <div className="publicadoFeed">
@@ -16,7 +31,7 @@ export default function CardFeed () {
         </div>
       </div>
       <div className="containerTextBodyFeed">
-        <p>Fala galeraa 👋 <br /> Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀</p>
+        <p>{contentText.contentText}</p>
       </div>
       <div className="containerFeedback">
         <p><b>Deixe seu feedback</b></p>

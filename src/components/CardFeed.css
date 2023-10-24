@@ -11,6 +11,16 @@
   
 }
 
+.containerTextFeed {
+  display: flex;
+  align-items: center;
+
+}
+
+.textFeed {
+  padding: 0px 0px 0px 16px;
+}
+
 .containerHearderTextFeed{
   display: flex;
 
