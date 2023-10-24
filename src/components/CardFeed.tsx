@@ -1,4 +1,6 @@
 import ImgProfile from './ImgProfile.tsx'
+import { format } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
 import './CardFeed.css'
 
 interface Author {
@@ -13,9 +15,13 @@ interface Content {
 interface PropsPost {
   author: Author,
   contentText: Content,
+  publishedAt: Date,
 }
 
-export default function CardFeed ({author, contentText}: PropsPost) {
+export default function CardFeed ({author, contentText, publishedAt}: PropsPost) {
+  const publishedDateFormat = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
+    locale: ptBR,
+  })
   return (
     <div className="containerGlobalCardFeed">
       <div className="containerHearderTextFeed">
@@ -27,7 +33,7 @@ export default function CardFeed ({author, contentText}: PropsPost) {
             </div>
         </div>
         <div className="publicadoFeed">
-          <p>Públicado há 1h</p>
+          <p>{publishedDateFormat}</p>
         </div>
       </div>
       <div className="containerTextBodyFeed">
