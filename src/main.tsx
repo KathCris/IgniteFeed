@@ -13,7 +13,11 @@ const post = [
       name: 'kathleen Santos',
       role: 'Dev front',
     },
-    content: {contentText: 'Foi muito legal aprender react com ignite'},
+    content: [
+      {type:'paragraph', content: 'Foi muito legal aprender react com ignite'},
+      {type:'paragraph', content: 'Foi muito legal aprender react com ignite'},
+      {type:'paragraph', content: 'Foi muito legal aprender react com ignite'},
+    ],
     publishedAt: new Date('2023-05-03 20:00:00'),
   },
   {
@@ -23,7 +27,9 @@ const post = [
       name: 'Vinicius Kimura',
       role: 'Analista de dados',
     },
-    content: {contentText: 'Muito bom, muito bom mesmo'},
+    content: [
+      {type:'paragraph', content: 'Muito bom, muito bom mesmo'},
+    ],
     publishedAt: new Date('2023-05-03 20:00:00'),
   },
   {
@@ -33,7 +39,10 @@ const post = [
       name: 'kathleen Santos',
       role: 'Dev back',
     },
-    content: {contentText: 'O foco agora é melhorar no react e aprender back-end de verdade'},
+    content: [
+      {type:'paragraph', content: 'O foco agora é melhorar no react e aprender back-end de verdade'},
+      {type:'paragraph', content: 'O foco agora é melhorar no react e aprender back-end de verdade'},
+    ],
     publishedAt: new Date('2023-05-03 20:00:00'),
   }
 ]
@@ -44,9 +53,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <div style={{display: 'flex'}}>
       <CardProfileLoged />
       <div style={{display: 'flex', flexDirection: 'column'}}>
-      {post.map(post => {
+      {post.map(p => {
         return (
-          <CardFeed author={post.author} contentText={post.content} publishedAt={post.publishedAt}/>
+          <CardFeed author={p.author} content={p.content} publishedAt={p.publishedAt}/>
         )
       })}
       </div>

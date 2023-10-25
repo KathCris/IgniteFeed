@@ -1,5 +1,5 @@
 import ImgProfile from './ImgProfile.tsx'
-import { format } from 'date-fns'
+import { format, formatDistanceToNow } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
 import './CardFeed.css'
 
@@ -9,19 +9,26 @@ interface Author {
   avatarUrl: string,
 }
 interface Content {
-  contentText: string,
+  type: string,
+  content: string,
 }
 
 interface PropsPost {
   author: Author,
-  contentText: Content,
+  content: Content[],
   publishedAt: Date,
 }
 
-export default function CardFeed ({author, contentText, publishedAt}: PropsPost) {
+export default function CardFeed ({author, content, publishedAt}: PropsPost) {
   const publishedDateFormat = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
     locale: ptBR,
   })
+
+  const publishedAtRelativeDateToNow = formatDistanceToNow(publishedAt, {
+    locale: ptBR,
+    addSuffix: true,
+  })
+
   return (
     <div className="containerGlobalCardFeed">
       <div className="containerHearderTextFeed">
@@ -34,10 +41,17 @@ export default function CardFeed ({author, contentText, publishedAt}: PropsPost)
         </div>
         <div className="publicadoFeed">
           <p>{publishedDateFormat}</p>
+          <time>
+            {publishedAtRelativeDateToNow}
+          </time>
         </div>
       </div>
       <div className="containerTextBodyFeed">
-        <p>{contentText.contentText}</p>
+        <p>
+          {content.map(line => {
+            return line.content
+          })}
+        </p>
       </div>
       <div className="containerFeedback">
         <p><b>Deixe seu feedback</b></p>
