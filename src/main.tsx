@@ -28,6 +28,7 @@ const post = [
       name: 'Vinicius Kimura',
       role: 'Analista de dados',
     },
+    contentPostByAuthor: 'Foi muito legal aprender react com ignite',
     content: [
       {type:'paragraph', content: 'Muito bom, muito bom mesmo'},
     ],
@@ -40,8 +41,9 @@ const post = [
       name: 'kathleen Santos',
       role: 'Dev back',
     },
+    contentPostByAuthor: 'O foco agora é melhorar no react e aprender back-end de verdade',
     content: [
-      {type:'paragraph', content: 'O foco agora é melhorar no react e aprender back-end de verdade'},
+      {type:'paragraph', content: 'Boa demais'},
       {type:'paragraph', content: 'type and scrambled it to make a type specimen book'},
     ],
     publishedAt: new Date('2023-05-03 20:00:00'),
@@ -56,7 +58,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <div style={{display: 'flex', flexDirection: 'column'}}>
       {post.map(p => {
         return (
-          <CardFeed author={p.author} content={p.content} publishedAt={p.publishedAt}/>
+          <CardFeed author={p.author} contentPostByAuthor={p.contentPostByAuthor} content={p.content} publishedAt={p.publishedAt}/>
         )
       })}
       </div>

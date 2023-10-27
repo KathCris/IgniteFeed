@@ -3,7 +3,8 @@
     display: flex;
     width: 100%;
 
-    gap: 24px;
+    gap: 16px;
+    margin-bottom: 32px;
 }
 
 .containerHeaderTextComent{
@@ -20,7 +21,7 @@
 .containerComent{
     background-color: #29292E;
     width: 100%;
-    padding: 16px;
+    padding: 10px 16px 16px 16px;
 
     border-radius: 8px;
 }

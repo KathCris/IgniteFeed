@@ -18,9 +18,10 @@ interface PropsPost {
   author: Author,
   content: Content[],
   publishedAt: Date,
+  contentPostByAuthor: string,
 }
 
-export default function CardFeed ({author, content, publishedAt}: PropsPost) {
+export default function CardFeed ({author, content, publishedAt, contentPostByAuthor}: PropsPost) {
   const publishedDateFormat = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
     locale: ptBR,
   })
@@ -48,13 +49,11 @@ export default function CardFeed ({author, content, publishedAt}: PropsPost) {
         </div>
       </div>
       <div className="containerTextBodyFeed">
-          {content.map(line => {
-            return <p>{line.content}</p>
-          })}
+          <p>{contentPostByAuthor}</p>
       </div>
       <div className="containerFeedback">
         <p><b>Deixe seu feedback</b></p>
-        <textarea name="" id="" cols={30} rows={10}></textarea>
+        <textarea  placeholder='Deixe um comentario'></textarea>
       </div>
       <div className="buttonFeed">
         <button>
@@ -62,7 +61,7 @@ export default function CardFeed ({author, content, publishedAt}: PropsPost) {
         </button>
       </div>
       <div className="coment">
-        <Coment author={author} />
+        <Coment author={author} contents={content} />
       </div>
     </div>
   )
