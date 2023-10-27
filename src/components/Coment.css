@@ -1,0 +1,31 @@
+
+.containerGlobalComent{
+    display: flex;
+    width: 100%;
+
+    gap: 24px;
+}
+
+.containerHeaderTextComent{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.containerTrash:hover{
+    color: #00B37E;
+    cursor: pointer;
+}
+
+.containerComent{
+    background-color: #29292E;
+    width: 100%;
+    padding: 16px;
+
+    border-radius: 8px;
+}
+
+.containerTextComent{
+    padding: 0px 0px 0px 16px;
+
+}

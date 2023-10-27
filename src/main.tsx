@@ -13,10 +13,11 @@ const post = [
       name: 'kathleen Santos',
       role: 'Dev front',
     },
+    contentPostByAuthor: 'Foi muito legal aprender react com ignite',
     content: [
-      {type:'paragraph', content: 'Foi muito legal aprender react com ignite'},
-      {type:'paragraph', content: 'Foi muito legal aprender react com ignite'},
-      {type:'paragraph', content: 'Foi muito legal aprender react com ignite'},
+      {type:'paragraph', content: 'Legal demais hein'},
+      {type:'paragraph', content: 'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s'},
+      {type:'paragraph', content: ' when an unknown printer took a galley'},
     ],
     publishedAt: new Date('2023-05-03 20:00:00'),
   },
@@ -41,7 +42,7 @@ const post = [
     },
     content: [
       {type:'paragraph', content: 'O foco agora é melhorar no react e aprender back-end de verdade'},
-      {type:'paragraph', content: 'O foco agora é melhorar no react e aprender back-end de verdade'},
+      {type:'paragraph', content: 'type and scrambled it to make a type specimen book'},
     ],
     publishedAt: new Date('2023-05-03 20:00:00'),
   }

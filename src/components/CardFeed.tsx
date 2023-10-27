@@ -2,6 +2,7 @@ import ImgProfile from './ImgProfile.tsx'
 import { format, formatDistanceToNow } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
 import './CardFeed.css'
+import Coment from './Coment.tsx'
 
 interface Author {
   name: string,
@@ -47,11 +48,9 @@ export default function CardFeed ({author, content, publishedAt}: PropsPost) {
         </div>
       </div>
       <div className="containerTextBodyFeed">
-        <p>
           {content.map(line => {
-            return line.content
+            return <p>{line.content}</p>
           })}
-        </p>
       </div>
       <div className="containerFeedback">
         <p><b>Deixe seu feedback</b></p>
@@ -61,6 +60,9 @@ export default function CardFeed ({author, content, publishedAt}: PropsPost) {
         <button>
           Publicar
         </button>
+      </div>
+      <div className="coment">
+        <Coment author={author} />
       </div>
     </div>
   )
