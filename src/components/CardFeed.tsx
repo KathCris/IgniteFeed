@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import ImgProfile from './ImgProfile.tsx'
 import { format, formatDistanceToNow } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
@@ -26,6 +27,18 @@ export default function CardFeed ({author, publishedAt, contentPostByAuthor}: Pr
     addSuffix: true,
   })
 
+  const [coments, setComents] = useState([
+    'post bacana demais!'
+   ])
+  const [newComents, setNewComents] = useState('')
+
+  function handleCreateNewComent () {
+    
+    setComents([...coments, newComents])
+    console.log('coments', coments)
+    setNewComents('')
+  }
+
   return (
     <div className="containerGlobalCardFeed">
       <div className="containerHearderTextFeed">
@@ -48,17 +61,22 @@ export default function CardFeed ({author, publishedAt, contentPostByAuthor}: Pr
       </div>
       <div className="containerFeedback">
         <p><b>Deixe seu feedback</b></p>
-        <textarea  placeholder='Deixe um comentario'></textarea>
+        <textarea
+          onChange={(e) => setNewComents(e.target.value)} 
+          value={newComents}
+          placeholder='Deixe um comentario'
+         >
+         </textarea>
       </div>
       <div className="buttonFeed">
-        <button>
+        <button onClick={handleCreateNewComent}>
           Publicar
         </button>
       </div>
       <div className="coment">
-        <Coment author={author} />
-        <Coment author={author} />
-        <Coment author={author} />
+        {coments.map(coment => {
+          return <Coment author={author} content={coment} />
+        })}
       </div>
     </div>
   )

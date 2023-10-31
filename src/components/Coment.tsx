@@ -10,9 +10,10 @@ interface Author {
 
 interface PropsPost {
   author: Author,
+  content: string,
 }
 
-export default function Coment ({author}: PropsPost) {
+export default function Coment ({author, content}: PropsPost) {
   return (
         <div className="containerGlobalComent">
             <ImgProfile avatarUrl={author.avatarUrl} />
@@ -27,7 +28,7 @@ export default function Coment ({author}: PropsPost) {
                     </div>
                 </div>
                 <div className="containerTextComent">
-                    <p>teste </p>
+                    <p>{content}</p>
                 </div>
             </div>
         </div>
