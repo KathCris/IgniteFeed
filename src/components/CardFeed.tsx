@@ -37,6 +37,14 @@ export default function CardFeed ({author, publishedAt, contentPostByAuthor}: Pr
     setNewComents('')
   }
 
+  function deleteComent (comentToDelete : string) {
+    const comentsWithoutDeleteOne = coments.filter(coment => {
+      return coment != comentToDelete
+    })
+
+    setComents(comentsWithoutDeleteOne)
+  }
+
   return (
     <div className="containerGlobalCardFeed">
       <div className="containerHearderTextFeed">
@@ -73,7 +81,7 @@ export default function CardFeed ({author, publishedAt, contentPostByAuthor}: Pr
       </div>
       <div className="coment">
         {coments.map(coment => {
-          return <Coment author={author} content={coment} />
+          return <Coment author={author} content={coment} deleteComent={deleteComent} />
         })}
       </div>
     </div>

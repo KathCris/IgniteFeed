@@ -2,7 +2,7 @@
 .globalCardProfile{
   background: #202024;
 
-  max-height: 280px;
+  max-height: 300px;
   width: 20rem;
   margin: 4rem;
 
@@ -50,4 +50,11 @@
   background-color: #00B37E;
   color: #202024;
   cursor: pointer;
+}
+
+
+.invoImgUserLoged{
+  display: flex;
+  justify-content: center;
+  margin-top: -2rem;
 }

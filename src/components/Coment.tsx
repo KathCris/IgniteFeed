@@ -11,9 +11,15 @@ interface Author {
 interface PropsPost {
   author: Author,
   content: string,
+  deleteComent: (comentToDelete: string) => void,
 }
 
-export default function Coment ({author, content}: PropsPost) {
+export default function Coment ({author, content, deleteComent}: PropsPost) {
+  function handleDeleteComent () {
+    deleteComent(content)
+  }
+
+
   return (
         <div className="containerGlobalComent">
             <ImgProfile avatarUrl={author.avatarUrl} />
@@ -24,7 +30,10 @@ export default function Coment ({author, content}: PropsPost) {
                         <p>{author.role}</p>
                     </div>
                     <div className="containerTrash">
-                        <Trash size={24} />
+                        <Trash 
+                          onClick={handleDeleteComent}
+                          size={24} 
+                         />
                     </div>
                 </div>
                 <div className="containerTextComent">
