@@ -33,9 +33,7 @@ export default function CardFeed ({author, publishedAt, contentPostByAuthor}: Pr
   const [newComents, setNewComents] = useState('')
 
   function handleCreateNewComent () {
-    
     setComents([...coments, newComents])
-    console.log('coments', coments)
     setNewComents('')
   }
 
