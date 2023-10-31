@@ -7,19 +7,13 @@ interface Author {
   role: string,
   avatarUrl: string,
 }
-interface Content {
-  type: string,
-  content: string,
-}
 
 interface PropsPost {
   author: Author,
-  contents: Content[],
 }
 
-export default function Coment ({author, contents}: PropsPost) {
+export default function Coment ({author}: PropsPost) {
   return (
-    contents.map(conten => (
         <div className="containerGlobalComent">
             <ImgProfile avatarUrl={author.avatarUrl} />
             <div className="containerComent">
@@ -33,10 +27,9 @@ export default function Coment ({author, contents}: PropsPost) {
                     </div>
                 </div>
                 <div className="containerTextComent">
-                    <p>{conten.content}</p>
+                    <p>teste </p>
                 </div>
             </div>
         </div>
-    ))
   )
 }

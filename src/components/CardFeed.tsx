@@ -9,19 +9,14 @@ interface Author {
   role: string,
   avatarUrl: string,
 }
-interface Content {
-  type: string,
-  content: string,
-}
 
 interface PropsPost {
   author: Author,
-  content: Content[],
   publishedAt: Date,
   contentPostByAuthor: string,
 }
 
-export default function CardFeed ({author, content, publishedAt, contentPostByAuthor}: PropsPost) {
+export default function CardFeed ({author, publishedAt, contentPostByAuthor}: PropsPost) {
   const publishedDateFormat = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
     locale: ptBR,
   })
@@ -61,7 +56,9 @@ export default function CardFeed ({author, content, publishedAt, contentPostByAu
         </button>
       </div>
       <div className="coment">
-        <Coment author={author} contents={content} />
+        <Coment author={author} />
+        <Coment author={author} />
+        <Coment author={author} />
       </div>
     </div>
   )
