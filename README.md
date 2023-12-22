@@ -8,6 +8,6 @@ News Feed is a news feed for the IT community. Developed with React, React Hooks
 
 ## How to Use
 
-1. Clone the repository: `git clone https://github.com/KathCris/IgniteFeed.git`
+1. Clone the repository: `git clone https://github.com/KathCris/NewsFeed.git`
 2. Install dependencies: `npm install`
 3. Start the application: `npm run dev`
